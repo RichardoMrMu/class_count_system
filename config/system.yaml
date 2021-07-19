@@ -1,0 +1,31 @@
+database:
+  user: 
+  port: 
+  host: 
+  password: 
+  charset: utf8
+  db: class_face
+system:
+  cpu: False
+  thread_num: 5
+  process_num: 2
+time:
+  epoch_time: 300
+  time_scheme: 1
+#  frequent_quantum_summer: [[800,940],[1010,1150],[1400,1535],[1555,1730],[1830,2005],[2015,2150]]
+#  frequent_quantum_autumn: [[800,940],[1010,1150],[1430,1605],[1625,1800],[1900,2035],[2045,2220]]
+  frequent_quantum_summer: [[[8,0],[9,40]],[[10,10],[11,50]],[[14,00],[15,35]],[[15,55],[17,30]],[[18,30],[20,5]],[[20,15],[21,50]]]
+  frequent_quantum_autumn: [[[8,0],[9,40]],[[10,10],[11,50]],[[14,30],[16,5]],[[16,25],[18,0]],[[19,0],[20,35]],[[20,45],[22,20]]]
+  frequent_time: 60
+  start_time: 750
+  end_time: 2220
+image:
+  width: 720
+  height: 1280
+model:
+  network: resnext50
+  cuda_visible_num: 1
+  cam_path: ''
+  cam_url: 
+  [
+   ]
