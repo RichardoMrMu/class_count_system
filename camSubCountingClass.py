@@ -46,7 +46,7 @@ class ReceiveThread(threading.Thread):
       
         self.get_media_ptz()
 
-    def get_media_ptz(self,port=80, admin_name='admin', passwd='abcd1234'):
+    def get_media_ptz(self,port=80, admin_name='', passwd=''):
             try:
                 transport = Transport(timeout=3,operation_timeout=3)
                 mycam = ONVIFCamera(self.cam_url, port, admin_name, passwd,transport=transport)
@@ -62,7 +62,7 @@ class ReceiveThread(threading.Thread):
     def get_image(self):
         media_profile = self.media.GetProfiles()[0]  
         res = self.media.GetSnapshotUri({'ProfileToken': media_profile.token})
-        response = requests.get(res.Uri, auth=HTTPDigestAuth("admin", "abcd1234"))
+        response = requests.get(res.Uri, auth=HTTPDigestAuth("", ""))
         data = response.content
         return self.ByteStreamToImage(data)
 
